@@ -3,8 +3,6 @@ import java.util.Random;
 
 public class ArithmeticGame
 {
-
-
 	public static void main(String[] args)
 	{
 		int numberOfTimeGameIsRunning = 10;
@@ -22,7 +20,6 @@ public class ArithmeticGame
 		{
 
 			int number1 = randomNumbers.nextInt(1, 10);
-
 			int number2 = randomNumbers.nextInt(1, 10);
 
 			System.out.printf("%d + %d = ", number1, number2);
@@ -30,15 +27,12 @@ public class ArithmeticGame
 			
 			if (userInput == number1 + number2)
 			{
+
 				correctAnswers++;
 			} else {
 				
 				incorrectAnswers++;
 			}
-
-		
-			
-			
 		}
 
 		System.out.printf("%nGame Over%nYour got %d correct%nYou got %d incorrect %n", correctAnswers, incorrectAnswers);
