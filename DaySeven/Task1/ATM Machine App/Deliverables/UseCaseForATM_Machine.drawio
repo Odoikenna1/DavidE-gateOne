@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net" modified="2024-05-13T13:27:44.394Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="lB2LQpcdnkIsHa6y-RfL" version="24.2.5" type="device">
+  <diagram name="Page-1" id="gQgs4raMr5YVJyw4C2tG">
+    <mxGraphModel dx="1034" dy="446" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7I-q4MAc95csg4sLK43u-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7I-q4MAc95csg4sLK43u-1" target="7I-q4MAc95csg4sLK43u-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7I-q4MAc95csg4sLK43u-1" target="7I-q4MAc95csg4sLK43u-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7I-q4MAc95csg4sLK43u-1" target="7I-q4MAc95csg4sLK43u-19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7I-q4MAc95csg4sLK43u-1" target="7I-q4MAc95csg4sLK43u-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7I-q4MAc95csg4sLK43u-1" target="7I-q4MAc95csg4sLK43u-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7I-q4MAc95csg4sLK43u-1" target="7I-q4MAc95csg4sLK43u-32">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7I-q4MAc95csg4sLK43u-1" target="7I-q4MAc95csg4sLK43u-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7I-q4MAc95csg4sLK43u-1" target="7I-q4MAc95csg4sLK43u-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-1" value="ATM Machine" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="270" y="140" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7I-q4MAc95csg4sLK43u-7" target="7I-q4MAc95csg4sLK43u-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-7" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="170" y="150" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7I-q4MAc95csg4sLK43u-11" target="7I-q4MAc95csg4sLK43u-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-11" value="Create Account" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-15" value="Create a pin" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-17" value="Check balance" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="425" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-19" value="Make deposit" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-21" value="Withdraw" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-30" value="Close account" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="425" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-32" value="Change pin" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="425" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-34" value="Change pin" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="425" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7I-q4MAc95csg4sLK43u-36" value="Transfer funds" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="860" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
