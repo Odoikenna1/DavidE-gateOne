@@ -12,6 +12,7 @@ public class Functions
 		SecureRandom newUserAccountNumber = new SecureRandom();
 
 		long accountNumber = newUserAccountNumber.nextLong(1000000000, 1111111111);
+		
 
 		int rows = customerData.length;
 		int columns = customerData[0].length;
@@ -39,6 +40,6 @@ public class Functions
 		}
 		System.out.println();
 		System.out.printf("%n%8s Account number %6s Account balance%n%n", "","");
-		System.out.printf("%s%8s%.2f%19s%d%n", customerData[0][0], "", availableBalance, "", customerData[1][0]);
+		return "your accot "customerData[1][0];
 	} 
 }
