@@ -4,7 +4,7 @@ public class Task7
 {
 	public static void main(String[] args)
 	{
-		ArrayList<Object> customerData = new ArrayList<Object>();
+		ArrayList<String> customerData = new ArrayList<String>();
 
 		String message = """
 		\nWelcome to Semicolon ATM services.
@@ -12,10 +12,19 @@ public class Task7
 		\n
 		1 -> Create new account     2 -> Check balance
 		3 -> Deposit money	    4 -> Withdraw funds
-		5 -> Transfer		    6 -> Retrieve accout number
-		7 -> Close account
+		5 -> Transfer		    6 -> Close account
+		
 		""";
 		System.out.print(message);
+
+		String message2 = """
+		\nNow your account has been created, try doing something else.
+
+		1 -> Check balance	2 -> Deposit money
+		3 -> Withdraw funds	4 -> Transfer
+		5 -> Close account
+		""";
+
 
 		Scanner input = new Scanner(System.in);
 
@@ -62,16 +71,13 @@ public class Task7
 					switch(userOptionToExitOrGoToMainMenu)
 					{
 					case "0":
-						System.out.println(message);
+						System.out.println(message2);
 						System.out.println("\nWhat will you like to do next? ");
 						String usersOption = input.next();
 					
 						switch(usersOption)
 						{
 						case "1":
-							System.out.println("Restart the program if you really want to do this again.");
-						
-						case "2":
 							input.nextLine();
 							System.out.println("Enter your account number to check your balance: ");
 							String inputToCheckAccountBalance = input.nextLine();
@@ -83,7 +89,21 @@ public class Task7
 										break;
 								}
 								System.out.println("\nPress 0 to return to main menu or # to exit:");
-								String userOptionToExitOrGoToMainMenu = input.next();
+								String userOptionToExitOrGoToMainMenu2 = input.next();
+
+								System.out.print(message2);
+
+								switch(userOptionToExitOrGoToMainMenu2)
+								{
+									case "2":
+										System.out.println("How much do you want to deposit? ");
+										double depositAmount = input.nextDouble();
+										System.out.print(customerData.get(3));
+										double balanceUpdated = Accounts.deposit(depositAmount, accountBalance);
+										customerData.add(3) = balanceUpdated;
+										System.out.println(customerData.get(3));
+								}
+								
 							}
 						case "#":
 							System.exit(0);
@@ -157,15 +177,3 @@ public class Task7
 		}
 	}
 }
-
-
-/*
-
-What next?
-
-Move the function to a method class.
-
-it should take in a int input
-
-return a String 
-*/
