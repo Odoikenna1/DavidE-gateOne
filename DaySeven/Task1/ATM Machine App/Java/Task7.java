@@ -4,10 +4,8 @@ public class Task7
 {
 	public static void main(String[] args)
 	{
-		ArrayList<ArrayList<Object>> customerData = new ArrayList<ArrayList<Object>>();
+		ArrayList<Object> customerData = new ArrayList<Object>();
 
-		//Object[][] customerData = new Object[5][5];	
-	
 		String message = """
 		\nWelcome to Semicolon ATM services.
 		What would you like to do today?
@@ -15,6 +13,7 @@ public class Task7
 		1 -> Create new account     2 -> Check balance
 		3 -> Deposit money	    4 -> Withdraw funds
 		5 -> Transfer		    6 -> Retrieve accout number
+		7 -> Close account
 		""";
 		System.out.print(message);
 
@@ -37,117 +36,128 @@ public class Task7
 				input.nextLine();
 				System.out.print("\nWhat is your name?  ");
 				String customerName = input.nextLine();
-				customerData.set() = customerName;
+				customerData.add(customerName);
 
 				long accountNumber = newUserAccountNumber.nextLong(1000000000, 1111111111);
 				String accountNumberTostring = String.valueOf(accountNumber);
-				customerData[0][1] = accountNumberTostring;
-
-				 customerData[0][2] = accountBalance;
+				customerData.add(accountNumberTostring);
 		
 				System.out.print("\nCreate a secret pin:  ");
 				String customerPin = input.nextLine();
-				customerData[0][3] = customerPin;
+				customerData.add(customerPin);
+
+				customerData.add(accountBalance);
 				
 				System.out.print("Do you want to create another account? ");
 				userChoiceOfCreatingAnotherAccount = input.next();
-				
-				indexOfArrays++;
-				indexOfElementsInArray++;
 
 				} while (userChoiceOfCreatingAnotherAccount.equalsIgnoreCase("yes"));
 				
-				System.out.println("\nYour account was successfully created.\nYou are required to fund your account within the next 24 hrs else, your account will be terminated.");
+				System.out.println("\nYour account was successfully created.\nYour new account number is " + customerData.get(1));
+				System.out.println("\nYou are required to fund your account within the next 24 hrs else, your account will be terminated.");
 
 				System.out.println("\nPress 0 to return to main menu or # to exit:");
 				String userOptionToExitOrGoToMainMenu = input.next();
 
 					switch(userOptionToExitOrGoToMainMenu)
 					{
-						case "0":
-							System.out.println(message);
-							System.out.println("\nWhat will you like to do next? ");
-							String usersOption = input.next();
+					case "0":
+						System.out.println(message);
+						System.out.println("\nWhat will you like to do next? ");
+						String usersOption = input.next();
+					
+						switch(usersOption)
+						{
+						case "1":
+							System.out.println("Restart the program if you really want to do this again.");
 						
-							switch(usersOption)
-							{
-								case "1":
-									System.out.println("You are not serious, I thought you just did this.\nRestart the program if you really wan to do this again.");
-								case "2":
-									System.out.println("Your account balance is: " + customerData[0][2]);
+						case "2":
+							input.nextLine();
+							System.out.println("Enter your account number to check your balance: ");
+							String inputToCheckAccountBalance = input.nextLine();
+
+								for (int i = 0; i < customerData.size(); i++){
+									if (customerData.get(i).equals(inputToCheckAccountBalance)){
+
+										System.out.println("\nYour account balance is " + customerData.get(3));
+										break;
+								}
+								System.out.println("\nPress 0 to return to main menu or # to exit:");
+								String userOptionToExitOrGoToMainMenu = input.next();
 							}
 						case "#":
 							System.exit(0);
+						}
+						default:
+							System.out.print("Invalid input\nTry again");
+					break;
 					}
-
 			case 2:
-				System.out.println("Your account balance is: " + customerData[0][2] + "\nYou do not have an account with us, please create an account.");
+				System.out.println("You do not have an account with us in the first place.\nYou need to have create an account with us, please create an account.");
 				System.out.println();
 				System.out.println("\nPress 0 to return to main menu or # to exit:");
-				 userOptionToExitOrGoToMainMenu = input.next();
+				userOptionToExitOrGoToMainMenu = input.next();
 				
-					switch(userOptionToExitOrGoToMainMenu){
+				switch(userOptionToExitOrGoToMainMenu){
 
-						case "0":
-							System.out.println(message);
-							System.out.println("\nPress 1 to create an account? ");
-							String usersOption = input.next();
+					case "0":
+						System.out.println(message);
+						System.out.println("\nPress 1 to create an account? ");
+						String usersOption = input.next();
 							
-							switch(usersOption)
-							{
-								case "1":
-									do {
-									input.nextLine();
-									System.out.print("\nWhat is your name?  ");
-									String customerName = input.nextLine();
-									customerData[0][0] = customerName;
+						switch(usersOption)
+						{
+						case "1":
+							do {
+								input.nextLine();
+								System.out.print("\nWhat is your name?  ");
+								String customerName = input.nextLine();
+								customerData.add(customerName);
 
-									long accountNumber = newUserAccountNumber.nextLong(1000000000, 1111111111);
-									String accountNumberTostring = String.valueOf(accountNumber);
-									customerData[0][1] = accountNumberTostring;
+								long accountNumber = newUserAccountNumber.nextLong(1000000000, 1111111111);
+								String accountNumberTostring = String.valueOf(accountNumber);
+								customerData.add(accountNumberTostring);
 
-									customerData[0][2] = accountBalance;
-		
-									System.out.print("\nCreate a secret pin:  ");
-									String customerPin = input.nextLine();
-									customerData[0][3] = customerPin;
+								System.out.print("\nCreate a secret pin:  ");
+								String customerPin = input.nextLine();
+								customerData.add(customerPin);
 				
-									System.out.print("Do you want to create another account? ");
-									userChoiceOfCreatingAnotherAccount = input.next();
+								System.out.print("Do you want to create another account? ");
+								userChoiceOfCreatingAnotherAccount = input.next();
+
+								} while (userChoiceOfCreatingAnotherAccount.equalsIgnoreCase("yes"));
 				
-									indexOfArrays++;
-									indexOfElementsInArray++;
-
-									} while (userChoiceOfCreatingAnotherAccount.equalsIgnoreCase("yes"));
 				
-									System.out.println("\nYour account was successfully created.\nYou are required to fund your account within the next 24 hrs else, your account will be terminated.");
+								System.out.println("\nYour account was successfully created.\nYour new account number is " + customerData.get(1));
+								System.out.println("\nYou are required to fund your account within the next 24 hrs else, your account will be terminated.");
 
-									System.out.println("\nPress 0 to return to main menu or # to exit:");
-									userOptionToExitOrGoToMainMenu = input.next();
+								System.out.println("\nPress 0 to return to main menu or # to exit:");
+								userOptionToExitOrGoToMainMenu = input.next();
 
-									switch(userOptionToExitOrGoToMainMenu)
-									{
-										case "0":
-											System.out.println(message);
-											System.out.println("\nWhat will you like to do next? ");
-											usersOption = input.next();
+								switch(userOptionToExitOrGoToMainMenu)
+								{
+								case "0":
+									System.out.println(message);
+									System.out.println("\nWhat will you like to do next? ");
+									usersOption = input.next();
 						
-											switch(usersOption)
-											{
-												case "1":
-													System.out.println("You are not serious, I thought you just did this.\nRestart the program if you really wan to do this again.");
-												case "2":
-													System.out.println("Your account balance is: " + customerData[0][2]);
-											}
-										case "#":
-											System.exit(0);
-											}
+									switch(usersOption)
+									{
+									case "1":
+										System.out.println("You are not serious, I thought you just did this.\nRestart the program if you really wan to do this again.");
+									case "2":
+										System.out.println("Your account balance is: " + customerData.get(1));
+									}
+									case "#":
+										System.exit(0);
+									}
 
 							}
 				}
 		}
 	}
 }
+
 
 /*
 
