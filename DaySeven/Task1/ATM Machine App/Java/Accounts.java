@@ -8,7 +8,7 @@ public class Accounts
 		return balance;
 	} 
 
-	public static double withdraw(double balance, int withdrawAmount)
+	public static double withdraw(double balance, double withdrawAmount)
 	{	
 		if (withdrawAmount > balance || withdrawAmount <= 0)
 		{
