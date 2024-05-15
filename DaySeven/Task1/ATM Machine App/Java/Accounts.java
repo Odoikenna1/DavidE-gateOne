@@ -4,22 +4,38 @@ import java.util.ArrayList;
 
 public class Accounts
 {	
-	ArrayList<Object> customerData = new ArrayList<>();
-	SecureRandom newUserAccountNumber = new SecureRandom();
+	private static ArrayList<String> customerName = new ArrayList<>();
+	private static ArrayList<String> customerAccountNumber = new ArrayList<>();
+	private static ArrayList<Double> customerAccountBalance = new ArrayList<>();
+	private static ArrayList<String> customerPin = new ArrayList<>();
 
-	public static void addCustomerNameAndAccountNumberToDataBase(String userInput)
+	private static SecureRandom newUserAccountNumber  = new SecureRandom();
+	private static double accountBalance = 0.00;
+
+	public static void createCustomerProfileAndPopulateDataBase(String userName, String pin)
 	{
-		customerData.add(userInput);
+		customerName.add(userName);
 		long accountNumber = newUserAccountNumber.nextLong(); 
 		String accountNumberTostring = String.valueOf(accountNumber);
-		customerData.add(accountNumberTostring);
+		customerAccountNumber.add(accountNumberTostring);
+		customerPin.add(pin);
 	}
 
-	public static double deposit(double amount, double balance)
+	public static void initializeAccountBalance()
 	{
-		balance = balance + amount;
-
-		return balance;
+		customerAccountBalance.add(accountBalance);
+	}
+	public static double depositFunds(String accountNumberTostring, double depositAmount)
+	{
+		
+		if(customerAccountNumber.contains(accountNumberTostring)){
+		int index = customerAccountNumber.indexOf(accountNumberTostring);
+		accountBalance = customerAccountBalance.get(index);
+		accountBalance = accountBalance + depositAmount;
+		customerAccountBalance.set(index, accountBalance);
+		}
+		
+		return accountBalance;
 	} 
 
 	public static double withdraw(double balance, double withdrawAmount)
