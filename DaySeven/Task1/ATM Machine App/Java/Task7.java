@@ -16,7 +16,7 @@ public class Task7 {
 		String message2 = """
 				\nNow that your account has been created, try initiating a transaction.
 
-				1 -> Deposit money	2 -> Check balance
+				1 -> Deposit funds	2 -> Check balance
 				3 -> Withdraw funds	4 -> Transfer
 				5 -> Close account
 				""";
@@ -24,7 +24,7 @@ public class Task7 {
 		String message3 = """
 			\nWhat will you like to do  next.
 
-			1 -> Deposit money	2 -> Check balance
+			1 -> Deposit funds	2 -> Check balance
 			3 -> Withdraw funds	4 -> Transfer
 			5 -> Close account
 			""";
@@ -86,10 +86,12 @@ public class Task7 {
 								customerData.set(3, accountBalance);
 								System.out.println(
 										"\nTransaction Successful\nYour new Balance is NGN" + customerData.get(3));
-								// break;
+								break;
 							case "2":
+							default:
+							
 
-								System.out.println("Enter your account number to check your balance: ");
+								System.out.println("\nEnter your account number to check your balance: ");
 								String inputToCheckAccountBalance = input.nextLine();
 
 								for (int i = 0; i < customerData.size(); i++) {
@@ -109,8 +111,8 @@ public class Task7 {
 								}
 								case "#":
 								System.exit(0);
-								default:
-								System.out.print("Invalid input\nTry again");
+								// default:
+								// System.out.print("Invalid input\nTry again");
 						}	
 				}
 

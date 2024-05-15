@@ -1,6 +1,10 @@
+import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Accounts
-{
+{	
+	private static ArrayList<Object> customerData = new ArrayList<>();
+
 	public static double deposit(double amount, double balance)
 	{
 		balance = balance + amount;
@@ -17,4 +21,5 @@ public class Accounts
 			return balance - withdrawAmount;
 		}		
 	} 
+
 }
