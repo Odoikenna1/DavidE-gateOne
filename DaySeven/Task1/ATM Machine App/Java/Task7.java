@@ -73,23 +73,32 @@ public class Task7 {
 							case "1":
 							System.out.println("How much do you want to deposit? ");
 							double depositAmount = input.nextDouble();
-							accountBalance = Double.parseDouble((String) customerData.get(3));
+							accountBalance = Double.parseDouble(String.valueOf(customerData.get(3)));
 
-							/*double balanceUpdated = Accounts.deposit(depositAmount, accountBalance);
+							double balanceUpdated = Accounts.deposit(depositAmount, accountBalance);
 							customerData.set(3, balanceUpdated);
-							System.out.println(customerData.get(3));
-							default:*/
-							System.out.println("Invalid input");
+							System.out.println("\nTransaction Successful\nYour new Balance is " + customerData.get(3));
+							break;
+
+							/*default:
+							System.out.println("Invalid input");*/
 						}
+						
 							
 				System.out.println("\nPress 0 to return to main menu or # to exit:");
-				String userOptionToExitOrGoToMainMenu2 = input.next();
-
-				System.out.print(message2);
+				String userOptionToExitOrGoToMainMenu2 = input.nextLine();
 
 				switch (userOptionToExitOrGoToMainMenu2) {
+					case "0":
+						System.out.println(message2);
+						
+						System.out.println("\nWhat will you like to do next? ");
+						String usersOption2 = input.nextLine();
+
+					switch(usersOption2){
+
 					case "2":
-					input.nextLine();
+
 					System.out.println("Enter your account number to check your balance: ");
 					String inputToCheckAccountBalance = input.nextLine();
 
@@ -123,7 +132,7 @@ public class Task7 {
 					case 0:
 						System.out.println(message);
 						System.out.println("\nPress 1 to create an account? ");
-						String usersOption = input.nextLine();
+						 usersOption = input.nextLine();
 
 						switch (usersOption) {
 							case "1":

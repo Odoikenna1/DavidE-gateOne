@@ -1,23 +1,20 @@
 
 public class Accounts
 {
-	public static double deposit(double balance, double amount)
+	public static double deposit(double amount, double balance)
 	{
-		double newAmount = 0;
-		newAmount = newAmount + amount;
+		balance = balance + amount;
 
-		return newAmount;
+		return balance;
 	} 
 
 	public static double withdraw(double balance, int withdrawAmount)
 	{	
-		double newAmount = 0;
-		if (withdrawAmount > newAmount || withdrawAmount <= 0)
+		if (withdrawAmount > balance || withdrawAmount <= 0)
 		{
-			newAmount = balance - withdrawAmount;
 			return 0;
 		} else {
-			return newAmount;
+			return balance - withdrawAmount;
 		}		
 	} 
 }
