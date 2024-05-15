@@ -4,7 +4,7 @@ public class Task7
 {
 	public static void main(String[] args)
 	{
-		ArrayList<String> customerData = new ArrayList<String>();
+		ArrayList<Object> customerData = new ArrayList<Object>();
 
 		String message = """
 		\nWelcome to Semicolon ATM services.
@@ -98,9 +98,10 @@ public class Task7
 									case "2":
 										System.out.println("How much do you want to deposit? ");
 										double depositAmount = input.nextDouble();
-										System.out.print(customerData.get(3));
+										accountBalance = Double.parseDouble((String)customerData.get(3));
+
 										double balanceUpdated = Accounts.deposit(depositAmount, accountBalance);
-										customerData.add(3) = balanceUpdated;
+										customerData.add(3) = (Double)balanceUpdated;
 										System.out.println(customerData.get(3));
 								}
 								
