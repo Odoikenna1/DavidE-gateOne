@@ -25,27 +25,63 @@ public class Accounts
 	{
 		customerAccountBalance.add(accountBalance);
 	}
-	public static double depositFunds(String accountNumberTostring, double depositAmount)
-	{
-		
-		if(customerAccountNumber.contains(accountNumberTostring)){
+	public static double depositFunds(String accountNumberTostring, double depositAmount, String pin)
+	{	
+		if(customerAccountNumber.contains(accountNumberTostring))
+		{
 		int index = customerAccountNumber.indexOf(accountNumberTostring);
 		accountBalance = customerAccountBalance.get(index);
-		accountBalance = accountBalance + depositAmount;
-		customerAccountBalance.set(index, accountBalance);
+			if(customerPin.get(index).equals(pin))
+			{
+			accountBalance = accountBalance + depositAmount;
+			customerAccountBalance.set(index, accountBalance);
+			}
 		}
-		
 		return accountBalance;
 	} 
 
-	public static double withdraw(double balance, double withdrawAmount)
-	{	
-		if (withdrawAmount > balance || withdrawAmount <= 0)
+	public static String withdraw(String accountNumberTostring, double balance, double withdrawAmount, String pin)
+	{
+		String updatedBalance = "";
+		double temp = 0;
+		if(customerAccountNumber.contains(accountNumberTostring))
 		{
-			return 0;
-		} else {
-			return balance - withdrawAmount;
-		}		
-	} 
+			int index = customerAccountNumber.indexOf(accountNumberTostring);
+			accountBalance = customerAccountBalance.get(index);
+				if(customerPin.get(index).equals(pin))
+				{
+					if(accountBalance < withdrawAmount)
+					{
+					return "Insuffient funds";	
+					} else {
+						accountBalance = accountBalance - withdrawAmount;
+						temp = accountBalance;
+						customerAccountBalance.set(index, accountBalance);
+						updatedBalance = String.valueOf(temp);
+						return updatedBalance;
+					}
+				}
+		}return updatedBalance;	
+	}
 
+	public static double checkBalance(String accountNumber)
+	{	double userBalance = 0;
+		if(customerAccountNumber.contains(accountNumber))
+		{
+			int index = customerAccountNumber.indexOf(accountNumber);
+			userBalance = customerAccountBalance.get(index);
+		}
+		return userBalance;
+	}
+
+	public static double transferFunds(String accountNumber, String transferAmount, String secondAccountNumber)
+	{
+		int indexCustomer1 = customerAccountNumber.indexOf(accountNumber);
+		int indexCustomer2 = customerAccountNumber.indexOf(secondAccountNumber);
+
+		if (customerAccountNumber.contains(accountNumber))
+		{
+			customerAccountBalance.
+		}
+	}
 }
