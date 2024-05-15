@@ -6,7 +6,7 @@ public class Task7 {
 		ArrayList<Object> customerData = new ArrayList<Object>();
 
 		String message = """
-				\n		Welcome to Semicolon Financial services.
+				\n	Welcome to Semicolon Financial services.
 				We would love to have you onbaord. Create an account to get started
 				\n
 				1 -> Create new account
