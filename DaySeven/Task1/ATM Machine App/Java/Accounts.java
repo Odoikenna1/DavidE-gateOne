@@ -12,24 +12,23 @@ public class Accounts
 	private static SecureRandom newUserAccountNumber  = new SecureRandom();
 	private static double accountBalance = 0.00;
 
-	public static void createCustomerProfileAndPopulateDataBase(String userName, String pin)
+	public static String createCustomerProfileAndPopulateDataBase(String userName, String pin)
 	{
 		customerName.add(userName);
-		long accountNumber = newUserAccountNumber.nextLong(); 
+		long accountNumber = newUserAccountNumber.nextLong(1000000000, 1111111111); 
 		String accountNumberTostring = String.valueOf(accountNumber);
 		customerAccountNumber.add(accountNumberTostring);
 		customerPin.add(pin);
+		customerAccountBalance.add(accountBalance);
+		return "Your account has been created successfully.\nYour account number is " + accountNumberTostring;
 	}
 
-	public static void initializeAccountBalance()
-	{
-		customerAccountBalance.add(accountBalance);
-	}
+
 	public static double depositFunds(String accountNumberTostring, double depositAmount, String pin)
-	{	
+	{	int index = 0;
 		if(customerAccountNumber.contains(accountNumberTostring))
 		{
-		int index = customerAccountNumber.indexOf(accountNumberTostring);
+		 index = customerAccountNumber.indexOf(accountNumberTostring);
 		accountBalance = customerAccountBalance.get(index);
 			if(customerPin.get(index).equals(pin))
 			{
@@ -37,7 +36,7 @@ public class Accounts
 			customerAccountBalance.set(index, accountBalance);
 			}
 		}
-		return accountBalance;
+		return customerAccountBalance.get(index);
 	} 
 
 	public static String withdraw(String accountNumberTostring, double balance, double withdrawAmount, String pin)
@@ -74,14 +73,31 @@ public class Accounts
 		return userBalance;
 	}
 
-	public static double transferFunds(String accountNumber, String transferAmount, String secondAccountNumber)
+	public static String transferFunds(String accountNumber, double transferAmount, String secondAccountNumber)
 	{
 		int indexCustomer1 = customerAccountNumber.indexOf(accountNumber);
 		int indexCustomer2 = customerAccountNumber.indexOf(secondAccountNumber);
-
+		double accountBalanceForCustomer1 = 0;
+		double accountBalanceForCustomer2 = 0;
 		if (customerAccountNumber.contains(accountNumber))
 		{
-			customerAccountBalance.
-		}
+			accountBalanceForCustomer1 = customerAccountBalance.get(indexCustomer1);
+			accountBalanceForCustomer2 = customerAccountBalance.get(indexCustomer2);
+
+			if (transferAmount < accountBalanceForCustomer1){
+
+				accountBalanceForCustomer1 = accountBalanceForCustomer1 - transferAmount;
+				customerAccountBalance.set(indexCustomer1, accountBalanceForCustomer1);
+				double fundsRemovedFromCustomer1 = accountBalanceForCustomer1;
+				accountBalanceForCustomer2 = fundsRemovedFromCustomer1 + accountBalanceForCustomer2;
+				customerAccountBalance.set(indexCustomer2, accountBalanceForCustomer2);
+
+			} else{
+
+				return "Insufficient funds.";
+			}
+			
+		} return "Transaction Successful.";
+	
 	}
 }
