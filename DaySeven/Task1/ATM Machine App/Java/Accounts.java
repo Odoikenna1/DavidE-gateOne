@@ -39,7 +39,7 @@ public class Accounts
 		return customerAccountBalance.get(index);
 	} 
 
-	public static String withdraw(String accountNumberTostring, double balance, double withdrawAmount, String pin)
+	public static String withdraw(String accountNumberTostring, double withdrawAmount, String pin)
 	{
 		String updatedBalance = "";
 		double temp = 0;
@@ -100,4 +100,17 @@ public class Accounts
 		} return "Transaction Successful.";
 	
 	}
+
+	public static String deactivateAccount(String customersAccountNumber)
+		{
+			if(customersAccountNumber.contains(customersAccountNumber))
+			{
+				int index = customersAccountNumber.indexOf(customersAccountNumber);
+
+				customerName.remove(index);
+				customerAccountBalance.remove(index);
+				customerPin.remove(index);
+			}
+			return "\nYour account has been removed.";
+		}
 }

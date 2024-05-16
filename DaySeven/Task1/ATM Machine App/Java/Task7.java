@@ -1,4 +1,3 @@
-import java.net.SocketTimeoutException;
 import java.security.SecureRandom;
 import java.util.*;
 
@@ -36,11 +35,7 @@ public class Task7 {
 
 		double accountBalance = 0.00;
 
-		boolean programIsActive = true;
 
-
-		while(programIsActive)
-		{
 		switch (userInput) {
 			case 1:
 			input.nextLine();
@@ -54,23 +49,19 @@ public class Task7 {
 			System.out.println(createAcoount);
 
 			System.out.println("\nPress 0 to view op the program ");
-			String userFlagInput = input.nextLine();
-
+			//String userFlagInput = input.nextLine();
+			userInput = input.nextInt();
 			break;
 
 			
 			case 2:
-
 			System.out.print("\nWhat is your account number?  ");
 			String depositAmount = input.nextLine();
-
 			System.out.print("\nHow much will you like to deposit?  ");
 			double creditAmount = input.nextDouble();
-
 			input.nextLine();
 			System.out.print("\nEnter your pin to complete this transaction:  ");
 			String pin = input.nextLine();
-
 			double newBalance = Accounts.depositFunds(depositAmount, creditAmount, pin);
 			System.out.print("\nTransaction succsesful\nYour new balance is NGN" + newBalance);
 			
@@ -88,8 +79,24 @@ public class Task7 {
 			userAccountNumber = input.nextLine();
 			System.out.println("Enter your pin to complete this transaction:  ");
 			String userPin = input.nextLine();
-			withdraw(userwithdrawAmount, userAccountNumber, userPin);
-		}
+			String transactionStatus = Accounts.withdraw(userAccountNumber, userwithdrawAmount, userPin);
+			System.out.println(transactionStatus);
+
+			case 5:
+			System.out.print("How much do you want to transfer? ");
+			double userWithdrawAmount = input.nextDouble();
+			System.out.print("Enter your account number:  ");
+			String debtorAccountNumber = input.nextLine();
+			System.out.print("Enter the account number of the receiver:  ");
+			String creditorAccountNumber= input.nextLine();
+			String transactionReport = Accounts.transferFunds(debtorAccountNumber, userWithdrawAmount, creditorAccountNumber);
+			System.out.print(transactionReport);
+			
+			case 6:
+			System.out.print("Your account number is requires to close your account: ");
+			String usersAccountNumber = input.nextLine();
+			String accountStatus = Accounts.deactivateAccount(usersAccountNumber);
+			System.out.println(accountStatus);
 		}
 	}
 }
