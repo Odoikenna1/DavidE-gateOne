@@ -1,18 +1,16 @@
-#Menstral_App
+#Menstrual_App
 
 #Write a function that determines flow date
 
 import datetime
 
-def determine_last_prediod_date(year, month, day): 
-	#x = datetime.today()
-	last_prediod_date = datetime.date(year, month, day)
+def determine_last_period_date(year, month, day): 
+	last_period_date = datetime.date(year, month, day)
 	
-	#flow_cycle = x.toordinal() - last_prediod_date.toordinal()
-	return last_prediod_date
+	return last_period_date
 
 def determine_ovulation_date(menstral_cycle_length ,last_period_date):
-	ovulation_date = last_period_date + datetime.timedelta(menstral_cycle_length - 14)
+	ovulation_date = last_period_date + datetime.timedelta(14)
 	return ovulation_date
 	
 def determine_first_safe_date(menstral_cycle_length ,last_period_date):
@@ -51,11 +49,11 @@ year = int(input("When was your last period date (Enter year)? "))
 month = int(input("When was your last period date (Enter month)? "))
 day = int(input("When was your last period date (Enter day)? "))
 
-period_length = int(input("Whats the average length period? "))
+period_length = int(input("Whats the average length of your period? "))
 menstral_cycle_length = int(input("Whats the average lenght of menstral cycle? "))
 
-last_period_date = determine_last_prediod_date(year, month, day)
-print(determine_last_prediod_date(year, month, day))
-print(determine_ovulation_date(menstral_cycle_length ,last_period_date))
-print(determine_first_date_of_next_period(menstral_cycle_length ,last_period_date))
-print(determine_last_date_of_next_period(menstral_cycle_length ,last_period_date, period_length)) 
+last_period_date = determine_last_period_date(year, month, day)
+print(f"\nYour period started on: {determine_last_period_date(year, month, day)}")
+print(f"Your ovulation date starts: {determine_ovulation_date(menstral_cycle_length ,last_period_date)}")
+print(f"Your next cycle begins: {determine_first_date_of_next_period(menstral_cycle_length ,last_period_date)}")
+print(f"Your next cycle begins: {determine_last_date_of_next_period(menstral_cycle_length ,last_period_date, period_length)}") 
