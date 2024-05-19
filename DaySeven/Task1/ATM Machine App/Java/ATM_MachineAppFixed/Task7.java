@@ -102,7 +102,7 @@ public class Task7 {
 								case "#":
 									System.exit(0);
 								default:
-								System.out.println("Invalid input\tTry again.");
+								System.out.println("Invalid input\nTry again.");
 							}
 				}
 				
